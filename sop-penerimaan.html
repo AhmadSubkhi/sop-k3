@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Penerimaan - LogistiCorp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* TEMA HIJAU */
+        :root { --primary: #10B981; --accent-bg: #ECFDF5; --text-dark: #1F2937; --text-gray: #6B7280; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #F9FAFB; color: var(--text-dark); line-height: 1.5; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: var(--white); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background-color: var(--primary); color: white; padding: 5px 8px; border-radius: 6px; }
+        .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; color: var(--text-gray); }
+        .page-header { background-color: var(--primary); color: white; padding: 4rem 5%; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid rgba(255,255,255,0.5); border-radius: 6px; color: white; margin-top: 1rem; }
+        .content-container { max-width: 1000px; margin: -3rem auto 3rem; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; margin-top: 5rem; }
+        .step-card { background: var(--white); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; border-left: 5px solid var(--primary); }
+        .step-number { flex-shrink: 0; width: 50px; height: 50px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 1.25rem; }
+        .step-content { flex: 1; }
+        .check-list-vertical .item { display: flex; align-items: start; gap: 10px; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .check-list-vertical .item i { color: #10B981; margin-top: 3px; }
+        .info-box { background-color: var(--accent-bg); padding: 1rem; border-radius: 8px; min-width: 250px; }
+        .info-value { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .info-card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        @media (max-width: 768px) { .step-card { flex-direction: column; } .bottom-grid { grid-template-columns: 1fr; } }
+        footer { background-color: #111827; color: #D1D5DB; padding: 3rem 5% 1rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><div class="logo-icon"><i class="fas fa-truck-fast"></i></div>LogistiCorp</div>
+        <div class="nav-links"><a href="index.html">Beranda</a><a href="#">SOP Penerimaan</a></div>
+    </nav>
+
+    <header class="page-header">
+        <h1>SOP Penerimaan Barang</h1>
+        <p>Panduan lengkap untuk penerimaan barang masuk dengan verifikasi kualitas dan dokumentasi yang tepat.</p>
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+    </header>
+
+    <div class="content-container">
+        <h2 class="section-title">Tahapan Proses Penerimaan</h2>
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Inspeksi Barang</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pemeriksaan fisik barang yang diterima</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Periksa kondisi kemasan luar</div>
+                    <div class="item"><i class="fas fa-check"></i> Cek kesesuaian jumlah barang dengan dokumen</div>
+                    <div class="item"><i class="fas fa-check"></i> Inspeksi visual fisik barang secara detail</div>
+                    <div class="item"><i class="fas fa-check"></i> Identifikasi kerusakan atau cacat pada barang</div>
+                    <div class="item"><i class="fas fa-check"></i> Dokumentasikan temuan (jika ada)</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Estimasi Waktu</p>
+                <div class="info-value">15-30 menit</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Tim Quality Control</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Verifikasi Dokumen</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pencocokan dokumen dengan barang yang diterima</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Cocokkan surat jalan dengan purchase order</div>
+                    <div class="item"><i class="fas fa-check"></i> Verifikasi invoice dan dokumen pendukung</div>
+                    <div class="item"><i class="fas fa-check"></i> Validasi spesifikasi barang sesuai pesanan</div>
+                    <div class="item"><i class="fas fa-check"></i> Cek tanggal kadaluarsa (untuk barang relevan)</div>
+                    <div class="item"><i class="fas fa-check"></i> Validasi batch/lot number dari supplier</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Estimasi Waktu</p>
+                <div class="info-value">10-20 menit</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Admin Gudang</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Quality Control</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pengujian kualitas barang sesuai standar</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Lakukan sampling untuk pengujian kualitas</div>
+                    <div class="item"><i class="fas fa-check"></i> Uji fungsi barang sesuai spesifikasi</div>
+                    <div class="item"><i class="fas fa-check"></i> Periksa sertifikat kualitas dari supplier</div>
+                    <div class="item"><i class="fas fa-check"></i> Dokumentasikan hasil pengujian</div>
+                    <div class="item"><i class="fas fa-check"></i> Tentukan status accept/reject barang</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Estimasi Waktu</p>
+                <div class="info-value">30-60 menit</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Quality Assurance</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Penyimpanan</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Penempatan barang di lokasi penyimpanan yang tepat</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Tentukan lokasi simpan sesuai kategori</div>
+                    <div class="item"><i class="fas fa-check"></i> Update sistem inventory dengan data barang</div>
+                    <div class="item"><i class="fas fa-check"></i> Label identifikasi pada rak penyimpanan</div>
+                    <div class="item"><i class="fas fa-check"></i> Atur barang sesuai metode (FIFO/FEFO)</div>
+                    <div class="item"><i class="fas fa-check"></i> Download penyimpanan di sistem</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Estimasi Waktu</p>
+                <div class="info-value">20-40 menit</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Tim Warehouse</div>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="info-card">
+                <h3 style="margin-bottom:1rem;"><i class="far fa-file-alt" style="color:var(--primary); margin-right:10px;"></i> Persyaratan</h3>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check-square"></i> Surat jalan dan dokumen pengiriman lengkap</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Purchase order yang valid</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Barang dalam kondisi baik saat diterima</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Sertifikat kualitas dari supplier</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Koordinasi dengan tim terkait</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3 style="margin-bottom:1rem;"><i class="fas fa-tools" style="color:var(--primary); margin-right:10px;"></i> Tools & Peralatan</h3>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-wrench"></i> Checklist inspeksi barang</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Alat ukur dan testing equipment</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Scanner barcode</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Label printer</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Sistem inventory management</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align:center;">&copy; 2025 LogistiCorp.</p>
+    </footer>
+</body>
+</html>

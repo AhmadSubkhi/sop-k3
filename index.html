@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogistiCorp - SOP Pengiriman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary-blue: #2563EB;
+            --secondary-blue: #1E40AF;
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            
+            /* Card Colors */
+            --icon-blue: #3B82F6;
+            --icon-green: #10B981;
+            --icon-purple: #8B5CF6;
+            --icon-red: #EF4444;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #111827;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 5px 8px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); /* Gambar Gudang/Truk */
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 span {
+            color: #60A5FA; /* Light Blue highlight */
+            display: block;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #E5E7EB;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* KATEGORI SOP SECTION */
+        .categories-section {
+            padding: 4rem 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-desc {
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* 2 kolom lebar */
+            gap: 2rem;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2rem; }
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E5E7EB;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .check-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .check-item {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .check-item i {
+            color: var(--icon-green);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            background: transparent;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* PROCESS FLOW SECTION */
+        .process-section {
+            padding: 4rem 5%;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .timeline-container {
+            margin-top: 3rem;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        /* Garis di belakang */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 25px; /* Sesuaikan posisi tengah lingkaran */
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        
+        /* Garis biru progress (opsional, diset statis setengah jalan seperti contoh) */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            width: 75%; /* Contoh progress */
+            height: 2px;
+            background-color: var(--primary-blue);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 18%; /* Bagi rata 5 item */
+            min-width: 150px;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border: 4px solid var(--white); /* Supaya garis di belakang tidak nempel */
+            box-shadow: 0 0 0 2px var(--primary-blue); /* Outline luar */
+        }
+        
+        /* Ikon kecil di bawah lingkaran angka */
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #DBEAFE; /* Biru muda sekali */
+            color: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .step h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .step p {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111827;
+            color: #D1D5DB;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 2rem;
+        }
+
+        .footer-left {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+        
+        /* Mobile adjustment for timeline */
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            .timeline-container::before, .timeline-container::after {
+                display: none; /* Hilangkan garis horizontal di HP */
+            }
+            .step {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-truck-fast"></i></div>
+            LogistiCorp
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Beranda</a>
+            <a href="./sop-penerimaan.html">SOP Pengiriman</a>
+            <a href="./sop-penerimaan.html">SOP Penerimaan</a>
+            <a href="./sop-gudang.html">SOP Gudang</a>
+            <a href="./sop-keamanan.html">SOP Keamanan</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Standar Operasional Prosedur<br><span>Pengiriman Barang</span></h1>
+        <p>Panduan lengkap prosedur operasional untuk memastikan pengiriman barang yang aman, tepat waktu, dan sesuai standar kualitas perusahaan</p>
+    </header>
+
+    <section class="categories-section">
+        <h2 class="section-title">Kategori Standar Operasional Prosedur</h2>
+        <p class="section-desc">Sistem SOP yang komprehensif untuk memastikan operasional pengiriman barang berjalan dengan standar kualitas tertinggi</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box" style="background-color: var(--icon-blue);">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>SOP Pengiriman</h3>
+                </div>
+                <p>Prosedur lengkap untuk proses pengiriman barang dari gudang hingga tujuan akhir</p>
+                <div class="check-list">
+                    <div class="check-item"><i class="fas fa-check"></i> Persiapan Barang</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Pengemasan</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Pengiriman</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Tracking</div>
+                </div>
+                <a href="./sop-pengiriman.html" class="btn-outline">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box" style="background-color: var(--icon-green);">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>SOP Penerimaan</h3>
+                </div>
+                <p>Panduan penerimaan barang masuk dan verifikasi kualitas sebelum disimpan</p>
+                <div class="check-list">
+                    <div class="check-item"><i class="fas fa-check"></i> Inspeksi Barang</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Verifikasi Dokumen</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Quality Control</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Penyimpanan</div>
+                </div>
+                <a href="./sop-penerimaan.html" class="btn-outline">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box" style="background-color: var(--icon-purple);">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>SOP Gudang</h3>
+                </div>
+                <p>Manajemen gudang yang efisien untuk penyimpanan dan pengambilan barang</p>
+                <div class="check-list">
+                    <div class="check-item"><i class="fas fa-check"></i> Inventory Management</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Storage System</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Stock Control</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Maintenance</div>
+                </div>
+                <a href="./sop-gudang.html" class="btn-outline">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box" style="background-color: var(--icon-red);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>SOP Keamanan</h3>
+                </div>
+                <p>Protokol keamanan untuk melindungi barang dan memastikan keselamatan kerja</p>
+                <div class="check-list">
+                    <div class="check-item"><i class="fas fa-check"></i> Security Protocol</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Safety Measures</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Emergency Response</div>
+                    <div class="check-item"><i class="fas fa-check"></i> Risk Management</div>
+                </div>
+                <a href="./sop-keamanan.html" class="btn-outline">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <h2 class="section-title">Alur Proses Pengiriman</h2>
+        <p class="section-desc">Setiap tahap dalam proses pengiriman mengikuti SOP yang telah ditetapkan untuk memastikan kualitas layanan terbaik</p>
+
+        <div class="timeline-container">
+            <div class="step">
+                <div class="step-circle">01</div>
+                <div class="step-icon"><i class="fas fa-file-invoice"></i></div>
+                <h4>Penerimaan Order</h4>
+                <p>Verifikasi dan validasi pesanan pengiriman dari customer</p>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">02</div>
+                <div class="step-icon"><i class="fas fa-box"></i></div>
+                <h4>Persiapan Barang</h4>
+                <p>Pengambilan barang dari gudang dan pengecekan kondisi</p>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">03</div>
+                <div class="step-icon"><i class="fas fa-tape"></i></div>
+                <h4>Pengemasan</h4>
+                <p>Pengemasan barang sesuai standar keamanan dan kualitas</p>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">04</div>
+                <div class="step-icon"><i class="fas fa-truck"></i></div>
+                <h4>Pengiriman</h4>
+                <p>Proses pengiriman dengan tracking real-time</p>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">05</div>
+                <div class="step-icon"><i class="fas fa-check-double"></i></div>
+                <h4>Konfirmasi</h4>
+                <p>Konfirmasi penerimaan dan feedback dari customer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <div class="logo-icon"><i class="fas fa-truck-fast"></i></div>
+                    LogistiCorp
+                </div>
+                <p>Perusahaan pengiriman barang terpercaya dengan standar operasional prosedur yang ketat untuk memastikan keamanan dan ketepatan waktu pengiriman.</p>
+                <div style="margin-top: 1rem; color: var(--primary-blue);">
+                    <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>
+                    <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="./sop-pengiriman.html">SOP Pengiriman</a></li>
+                    <li><a href="./sop-penerimaan.html">SOP Penerimaan</a></li>
+                    <li><a href="./sop-gudang.html">SOP Gudang</a></li>
+                    <li><a href="./sop-keamanan.html">SOP Keamanan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>

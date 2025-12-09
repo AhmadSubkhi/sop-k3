@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Gudang - LogistiCorp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* TEMA UNGU */
+        :root { --primary: #8B5CF6; --accent-bg: #F5F3FF; --text-dark: #1F2937; --text-gray: #6B7280; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #F9FAFB; color: var(--text-dark); line-height: 1.5; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: var(--white); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background-color: var(--primary); color: white; padding: 5px 8px; border-radius: 6px; }
+        .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 500; color: var(--text-gray); }
+        .page-header { background-color: var(--primary); color: white; padding: 4rem 5%; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid rgba(255,255,255,0.5); border-radius: 6px; color: white; margin-top: 1rem; }
+        .content-container { max-width: 1000px; margin: -3rem auto 3rem; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; margin-top: 5rem; }
+        .step-card { background: var(--white); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; border-left: 5px solid var(--primary); }
+        .step-number { flex-shrink: 0; width: 50px; height: 50px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 1.25rem; }
+        .step-content { flex: 1; }
+        .check-list-vertical .item { display: flex; align-items: start; gap: 10px; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .check-list-vertical .item i { color: #10B981; margin-top: 3px; }
+        .info-box { background-color: var(--accent-bg); padding: 1rem; border-radius: 8px; min-width: 250px; }
+        .info-value { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .info-card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        @media (max-width: 768px) { .step-card { flex-direction: column; } .bottom-grid { grid-template-columns: 1fr; } }
+        footer { background-color: #111827; color: #D1D5DB; padding: 3rem 5% 1rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><div class="logo-icon"><i class="fas fa-truck-fast"></i></div>LogistiCorp</div>
+        <div class="nav-links"><a href="index.html">Beranda</a><a href="#">SOP Gudang</a></div>
+    </nav>
+
+    <header class="page-header">
+        <h1>SOP Manajemen Gudang</h1>
+        <p>Sistem manajemen gudang yang efisien untuk optimalisasi penyimpanan dan pengambilan barang.</p>
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+    </header>
+
+    <div class="content-container">
+        <h2 class="section-title">Komponen Manajemen Gudang</h2>
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Inventory Management</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pengelolaan stok barang secara sistematis</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Lakukan stok opname secara berkala</div>
+                    <div class="item"><i class="fas fa-check"></i> Update data inventory di sistem real-time</div>
+                    <div class="item"><i class="fas fa-check"></i> Monitor level minimum dan maksimum stock</div>
+                    <div class="item"><i class="fas fa-check"></i> Identifikasi barang slow moving dan fast moving</div>
+                    <div class="item"><i class="fas fa-check"></i> Koordinasi dengan tim procurement untuk reorder</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Frekuensi</p>
+                <div class="info-value">Harian</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Supervisor Gudang</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Storage System</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pengaturan sistem penyimpanan yang teratur</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Terapkan dasar layout dengan kode yang jelas</div>
+                    <div class="item"><i class="fas fa-check"></i> Atur barang berdasarkan kategori dan frekuensi akses</div>
+                    <div class="item"><i class="fas fa-check"></i> Lakukan rotasi stok, bersih dan aman</div>
+                    <div class="item"><i class="fas fa-check"></i> Gunakan rack/pallet untuk barang dengan spesifik data</div>
+                    <div class="item"><i class="fas fa-check"></i> Optimalisasi penggunaan ruang penyimpanan</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Frekuensi</p>
+                <div class="info-value">Mingguan</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Tim Warehouse</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Stock Control</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Kontrol ketat terhadap pergerakan barang</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Catat setiap transaksi masuk dan keluar barang</div>
+                    <div class="item"><i class="fas fa-check"></i> Verifikasi dokumen sebelum release barang</div>
+                    <div class="item"><i class="fas fa-check"></i> Jalankan cycle counting untuk kontrol data</div>
+                    <div class="item"><i class="fas fa-check"></i> Monitor dan investigasi discrepancy stock</div>
+                    <div class="item"><i class="fas fa-check"></i> Buat laporan stock movement harian</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Frekuensi</p>
+                <div class="info-value">Harian</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Admin Gudang</div>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Maintenance</h3>
+                <p style="color:#6B7280; margin-bottom:1rem;">Pemeliharaan fasilitas dan peralatan gudang</p>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check"></i> Lakukan cleaning dan housekeeping rutin</div>
+                    <div class="item"><i class="fas fa-check"></i> Perawatan berkala untuk equipment handling</div>
+                    <div class="item"><i class="fas fa-check"></i> Cek kondisi rak dan struktur penyimpanan</div>
+                    <div class="item"><i class="fas fa-check"></i> Maintenance sistem ventilasi dan pencahayaan</div>
+                    <div class="item"><i class="fas fa-check"></i> Kalibrasi alat ukur dan timbangan</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p style="font-size:0.8rem; color:#6B7280;">Frekuensi</p>
+                <div class="info-value">Mingguan/Bulanan</div>
+                <p style="font-size:0.8rem; color:#6B7280; margin-top:10px;">Penanggung Jawab</p>
+                <div class="info-value">Tim Maintenance</div>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="info-card">
+                <h3 style="margin-bottom:1rem;"><i class="far fa-file-alt" style="color:var(--primary); margin-right:10px;"></i> Persyaratan</h3>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-check-square"></i> Sistem WMS (Warehouse Management System)</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Layout gudang yang efisien</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Peralatan handling yang memadai</div>
+                    <div class="item"><i class="fas fa-check-square"></i> Prosedur keselamatan kerja</div>
+                    <div class="item"><i class="fas fa-check-square"></i> SDM yang terlatih dan kompeten</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3 style="margin-bottom:1rem;"><i class="fas fa-tools" style="color:var(--primary); margin-right:10px;"></i> Tools & Peralatan</h3>
+                <div class="check-list-vertical">
+                    <div class="item"><i class="fas fa-wrench"></i> Forklift dan hand pallet</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Scanner barcode dan RFID</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Rak penyimpanan modular</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Sistem monitoring suhu dan kelembaban</div>
+                    <div class="item"><i class="fas fa-wrench"></i> Software inventory management</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align:center;">&copy; 2025 LogistiCorp.</p>
+    </footer>
+</body>
+</html>
